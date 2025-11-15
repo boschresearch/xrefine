@@ -84,7 +84,7 @@ def XRefine(
         # print("Loaded model from", weights_file_path)
 
         weights = torch.hub.load_state_dict_from_url(
-            "https://github.com/boschresearch/xrefine/tree/main/" + weights_file_path,
+            "https://github.com/boschresearch/xrefine/blob/main/" + weights_file_path,
             map_location=torch.device("cpu"),
         )
         model.net.load_state_dict(weights["model"])
