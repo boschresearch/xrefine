@@ -1,0 +1,6 @@
+[submodule submodulesglue_factory]
+	path = submodulesglue_factory
+	url = httpsgithub.comcvgglue-factory.git
+[submodule submodulespixel-perfect-sfm]
+	path = submodulespixel-perfect-sfm
+	url = httpsgithub.comcvgpixel-perfect-sfm.git
