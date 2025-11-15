@@ -17,9 +17,9 @@ In order to view this readme, you can open the repository with Visual Studio Cod
 </p>
 
 ## Using this repository
-### Obtain submodule
+### Clone the repo recursively
 ```bash
-git clone --recurse-submodules https://github.com/cvg/glue-factory.git submodules/glue_factory
+git clone --recursive https://github.com/boschresearch/xrefine.git
 ```
 
 ### Conda environment
