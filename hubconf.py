@@ -80,13 +80,13 @@ def XRefine(
         weights_file_path = "pretrained/" + weights_file_name
 
         # For local loading of weights, uncomment the following lines.
-        weights = torch.load(weights_file_path, weights_only=False)
-        print("Loaded model from", weights_file_path)
+        # weights = torch.load(weights_file_path, weights_only=False)
+        # print("Loaded model from", weights_file_path)
 
-        # weights = torch.hub.load_state_dict_from_url(
-        #     "https://github.com/boschresearch/xrefine/raw/main/" + weights_file_path,
-        #     map_location=torch.device("cpu"),
-        # )
+        weights = torch.hub.load_state_dict_from_url(
+            "https://github.com/boschresearch/xrefine/raw/main/" + weights_file_path,
+            map_location=torch.device("cpu"),
+        )
         model.net.load_state_dict(weights["model"])
 
     return model
