@@ -16,6 +16,44 @@ In order to view this readme, you can open the repository with Visual Studio Cod
     <em><b>XRefine</b> efficiently improves relative pose estimation. <b>Left:</b> Exemplary matched SuperPoint keypoints. The input to our model are the 11x11 patches within the red dotted lines. The refined keypoints of our model are presented as yellow dots. <b>Right:</b> Runtime and pose estimation improvement on MegaDepth (measured as relative increase in AUC5) of match refinement approaches averaged over five feature extractors: DeDoDe, SIFT, SuperPoint, and XFeat. We compare our generalizing model to <a href="https://github.com/KimSinjeong/keypt2subpx" align="center">Keypt2Subpx</a> and the match refinement solution of <a href="https://github.com/cvg/pixel-perfect-sfm" align="center">PixSfM</a>. PixSfM extracts dense S2DNet embeddings for feature-metric refinement. Depending on the use case this might be done exclusively for the refinement. Accordingly, we show the runtime of PixSfM with and without S2DNet inference.</em>
 </p>
 
+## Simple Usage
+You may load the model through torch hub:
+
+```python
+import torch
+
+image_width = 640
+image_height = 480
+num_keypoints = 10
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
+xrefine = (
+    torch.hub.load("boschresearch/xrefine", "XRefine",
+                   pretrained=True,
+                   detector="general",
+                   variant="small",
+                   adjust_only_second_keypoint=False,
+                   image_values_are_normalized=True,
+                   trust_repo=True,
+                   )
+    .to(device)
+    .eval()
+)
+
+img1_tensor = torch.rand(1, 3, image_height, image_width, device=device)
+img2_tensor = torch.rand(1, 3, image_height, image_width, device=device)
+
+keypoints1 = torch.rand(num_keypoints, 2, device=device)
+keypoints2 = torch.rand(num_keypoints, 2, device=device)
+scaling_factors = torch.tensor([image_width, image_height], dtype=torch.float32, device=device)
+keypoints1 = torch.mul(keypoints1, scaling_factors)
+keypoints2 = torch.mul(keypoints2, scaling_factors)
+
+refined_keypoints1, refined_keypoints2 = xrefine(keypoints1, keypoints2, img1_tensor[0], img2_tensor[0])
+```
+
+Detector specific variants can be loaded by setting the detector parameter to one of the following: 'aliked', 'dedode', 'dedodev2', 'disk', 'r2d2, 'sift', 'splg', 'spnn', 'xfeat'. The large variant can be loaded by setting the variant to 'large', and to adjust only the second keypoint, while fixing the first one, set adjust_only_second_keypoint to 'True'.
+
 ## Using this repository
 ### Clone the repo recursively
 ```bash
