@@ -1,3 +1,5 @@
+#!/bin/bash
+
 data_dir="processed_data/train_val"
 dataset="MegaDepthGlueFactory_sampled_normally-1p50_4096.hdf5"
 

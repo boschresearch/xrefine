@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # User specific settings
 path_to_dataprocessing="dataprocess"
 

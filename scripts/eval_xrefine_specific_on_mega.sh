@@ -1,3 +1,5 @@
+#!/bin/bash
+
 data_dir="processed_data/only_eval"
 
 dataset="MegaDepthGlueFactory"
