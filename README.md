@@ -108,7 +108,8 @@ Per default, the scripts use our pre-trained weights and assume the evaluation d
 ```
 
 ## Citation
-@misc{schmid_hagemann_xrefine_2026,
+```
+@article{schmid_hagemann_xrefine_2026,
       title={{XR}efine: Attention-Guided Keypoint Match Refinement}, 
       author={Jan Fabian Schmid and Annika Hagemann},
       year={2026},
@@ -117,6 +118,7 @@ Per default, the scripts use our pre-trained weights and assume the evaluation d
       primaryClass={cs.CV},
       url={https://arxiv.org/abs/2601.12530}, 
 }
+```
 
 ## License
 
