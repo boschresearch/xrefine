@@ -5,8 +5,7 @@ In order to view this readme, you can open the repository with Visual Studio Cod
 <p align="center">
   <h1 align="center"> XRefine: Attention-Guided Keypoint Match Refinement</h1>
   <h2 align="center"><p>
-    <a href="TODO" align="center">[Project Page (TODO)]</a> |
-    <a href="TODO" align="center">[ArXiv (TODO)]</a>
+    <a href="https://arxiv.org/pdf/2601.12530" align="center">[ArXiv]</a>
   </p></h2>
   <div align="center"></div>
 </p>
