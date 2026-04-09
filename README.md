@@ -5,8 +5,9 @@ In order to view this readme, you can open the repository with Visual Studio Cod
 <p align="center">
   <h1 align="center"> XRefine: Attention-Guided Keypoint Match Refinement</h1>
   <h2 align="center"><p>
-    <a href="TODO" align="center">[Project Page (TODO)]</a> |
-    <a href="TODO" align="center">[ArXiv (TODO)]</a>
+    <a href="https://openreview.net/pdf?id=6tOALaimfU" align="center">[3DV Paper]</a>
+    <a href="https://openreview.net/attachment?id=6tOALaimfU&name=supplementary_material" align="center">[3DV Supplementary]</a>
+    <a href="https://arxiv.org/pdf/2601.12530" align="center">[ArXiv]</a>
   </p></h2>
   <div align="center"></div>
 </p>
@@ -109,7 +110,14 @@ Per default, the scripts use our pre-trained weights and assume the evaluation d
 ```
 
 ## Citation
-TODO
+```
+@article{schmid_hagemann_xrefine_2026,
+         title={{XR}efine: Attention-Guided Keypoint Match Refinement}, 
+         author={Jan Fabian Schmid and Annika Hagemann},
+         year={2026},
+         booktitle={Thirteenth International Conference on 3D Vision}
+}
+```
 
 ## License
 
